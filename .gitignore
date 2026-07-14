@@ -1,8 +1,10 @@
-# Operating System files
+# Python cache files
+__pycache__/
+*.pyc
+
+# Operating system files
 .DS_Store
 Thumbs.db
-desktop.ini
 
-# IDE config folders
-.vscode/
-.idea/
+# Local Streamlit tracking logs
+.streamlit/runtime/
