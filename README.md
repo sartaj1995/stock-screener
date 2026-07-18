@@ -34,7 +34,7 @@ The application grades tickers based on a customized long-term investment matrix
 ## 🖥️ Preview & Interface
 Here is a snapshot of the live data scorecard in action:
 
-![Dashboard Metrics Scorecard Layout](screenshots/dashboard_view.png)
+![Dashboard Metrics Scorecard Layout](images/db_view__1.jpg)
 
 ---
 
