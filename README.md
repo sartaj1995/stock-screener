@@ -60,7 +60,7 @@ If you wish to clone this repository and run the engine locally on your machine,
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/yourusername/stock-screener.git](https://github.com/yourusername/stock-screener.git)
+   git clone [https://github.com/sartaj1995/stock-screener.git](https://github.com/sartaj1995/stock-screener.git)
    cd stock-screener
    ```
 
