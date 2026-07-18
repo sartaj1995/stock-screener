@@ -2,12 +2,15 @@
 
 An automated fundamental analysis dashboard engineered to pull live data from the National Stock Exchange (NSE) and evaluate companies against long-term value investing frameworks. Built entirely in Python using Streamlit, yfinance, and Altair.
 
+*An AI-assisted "vibe-coded" financial engineering case study, built entirely via natural language workflows.*
+
 ## 🚀 Live Link
 👉 **[View the Deployed Web Application on Streamlit Cloud](https://stock-screener-ap7rq45vckscpsbpfuc86p.streamlit.app/)**
 
 ---
 
 ## 🎯 Key Features
+* **🤖 AI-Driven Architecture (Vibe-Coded):** Engineered using sequential natural language prompting strategies. The precise behavioral prompts used to design the fundamental calculation engine and style the dark-mode layout are fully open-sourced for replication studies.
 * **Automated Scoring Engine:** Processes key fundamental metrics dynamically, scoring companies out of a relative maximum scaling baseline.
 * **Context-Aware Evaluation:** Dynamically adjusts rules based on industry sectors. For instance, Price-to-Book (P/B) is calculated exclusively for asset-heavy segments (Financials, Industrials), while banks are automatically exempt from traditional Debt-to-Equity penalties.
 * **Interactive Data Matrix:** Clear dark-mode scorecards itemizing individual rating zones (Good 🟢, Normal 🟡, Bad 🔴).
@@ -28,6 +31,19 @@ The application grades tickers based on a customized long-term investment matrix
 | **ROCE** | > 20% | 13% - 19% | < 12% |
 | **Debt-to-Equity** | < 0.5 | 0.5 - 1.0 | > 1.2 |
 | **Current Ratio** | > 1.5 | 1.1 - 1.5 | < 1.0 (Liquidity Risk) |
+
+---
+
+## 📁 Repository Structure
+
+```text
+├── 📁 prompts/
+│   ├── 📄 01_system_architecture.txt
+│   └── 📄 02_ui_beautification.txt
+├── 📄 app.py
+├── 📄 DISCLAIMER.md
+└── 📄 requirements.txt
+```
 
 ---
 
@@ -58,6 +74,16 @@ If you wish to clone this repository and run the engine locally on your machine,
    ```bash
    streamlit run app.py
    ```
+
+---
+
+## 🤖 Replicating or Modifying via LLMs
+
+Because this project is entirely vibe-coded, you can easily alter the screening rules or port the system to other web frameworks without editing code manually:
+1. Navigate to the `prompts/` directory.
+2. Feed `01_system_architecture.txt` into any advanced LLM to recreate the baseline backend data engine.
+3. Execute `02_ui_beautification.txt` to apply the AMOLED theme skin and chart refinements.
+4. Tweak the textual variables inside the prompt files (e.g., changing the P/E ratio targets) to dynamically output customized analytical variants.
 
 ---
 
