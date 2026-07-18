@@ -3,7 +3,7 @@
 An automated fundamental analysis dashboard engineered to pull live data from the National Stock Exchange (NSE) and evaluate companies against long-term value investing frameworks. Built entirely in Python using Streamlit, yfinance, and Altair.
 
 ## 🚀 Live Link
-👉 **[View the Deployed Web Application on Streamlit Cloud](https://share.streamlit.io/)** *(Replace this link with your actual Streamlit deployment URL once live)*
+👉 **[View the Deployed Web Application on Streamlit Cloud](https://stock-screener-ap7rq45vckscpsbpfuc86p.streamlit.app/)**
 
 ---
 
