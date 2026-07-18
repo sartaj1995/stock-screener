@@ -1,4 +1,4 @@
-# 📊 Long-Term Indian Stock Screener
+# 📊 Long-Term Indian Stock Screener (Vibe-Coded)
 
 An automated fundamental analysis dashboard engineered to pull live data from the National Stock Exchange (NSE) and evaluate companies against long-term value investing frameworks. Built entirely in Python using Streamlit, yfinance, and Altair.
 
