@@ -1,0 +1,22 @@
+Act as a UI/UX Developer specializing in Streamlit front-end engineering. Take the existing backend fundamental stock screening script and refactor the presentation layout into a high-end, dark-themed professional investment dashboard.
+
+Implement the following front-end layout upgrades:
+
+1. Deep Dark Theme Styling:
+   - Inject custom CSS using `st.markdown(..., unsafe_allow_html=True)` to force a strict AMOLED black background (`#000000`) across the application canvas.
+   - Style all structural text headers, labels, metrics blocks, dataframes, and tables to render sharply in white (`#FFFFFF`) or high-contrast grey (`#A0AEC0`).
+   - Style the investment recommendation banner box dynamically using the calculated rating category color accents, adding a subtle border padding and radius.
+
+2. Native Tab Navigation Architecture:
+   - Split the main output layout grid into two clean native tabs using `st.tabs(["📊 Analysis Dashboard", "📖 Investor Guide Matrix"])`.
+   - Tab 1 must house the live ticker analysis results, metrics, and charts.
+   - Tab 2 must display an static, clean Markdown reference table breaking down the baseline screening criteria rules (Good/Normal/Bad boundaries) for educational reference.
+
+3. Profile Presentation Layout:
+   - Display the full company name across the top span using a prominent `st.subheader` to prevent long name truncation.
+   - Place a row of three key snapshot metrics underneath the title using `st.columns(3)`: Current Market Price, YoY Sales Growth, and a calculated Valuation Safety Margin.
+   - The Valuation Safety Margin metric block must display the percentage premium or discount relative to a baseline sector value, complete with an inline tooltip question-mark indicator using the native metric `help` attribute. Ensure custom CSS is added to keep the tooltip content legible against the black background.
+
+4. Advanced Data Visualization (Anti-Zero Scaling Line Chart):
+   - Move the 1-Year historical price trend chart directly below the core fundamentals scorecard DataFrame grid.
+   - Instead of Streamlit's default zero-based charting tools, implement an explicit Altair line chart (`alt.Chart`). Configure the Y-axis encoding scale explicitly with `scale=alt.Scale(zero=False)`. This forces the line trend timeline to dynamically scale and hug the actual historical equity price boundaries instead of dropping to zero.

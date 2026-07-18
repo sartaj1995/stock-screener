@@ -1,0 +1,34 @@
+Act as an expert Python Financial Software Engineer. Generate a production-ready Streamlit application that functions as a Long-Term Indian Stock Screener utilizing live market data from the `yfinance` open-source wrapper.
+
+The application must implement the following core technical specifications:
+
+1. Ticker Input & Validation:
+   - Accept an NSE stock ticker string input from the user (defaulting to 'RELIANCE.NS').
+   - Clean the input (strip whitespace, force uppercase).
+   - Implement error handling: Verify via yfinance that the ticker exists and contains valid profile metrics (e.g., 'longName', 'currentPrice'). Display a clean st.error message if the validation fails.
+
+2. Data Extraction Matrix:
+   Extract the following financial data fields dynamically from the yfinance ticker info dict:
+   - Company Long Name, Sector, and Current Market Price
+   - Trailing P/E, PEG Ratio, Price-to-Book (P/B), and Current Ratio
+   - Return on Equity (ROE), Return on Assets (ROA), Debt-to-Equity, and Revenue Growth (YoY Sales Growth)
+
+3. Dynamic Sector-Aware Scoring Engine:
+   Implement an automated scoring algorithm that evaluates fundamentals out of a variable maximum possible point baseline.
+   - P/E Ratio (Worth 20 pts): Good (10-18) = 20pts; Normal (18-30) = 10pts; Bad (>45 or <8) = 0pts.
+   - PEG Ratio (Worth 20 pts): Good (<1.0) = 20pts; Normal (1.0-1.5) = 10pts; Bad (>1.5) = 0pts.
+   - Return on Equity (Worth 15 pts): Good (>=18%) = 15pts; Normal (13-18%) = 10pts; Bad (<12%) = 0pts.
+   - Return on Capital / ROA proxy (Worth 15 pts): Good (>=20%) = 15pts; Normal (13-19%) = 10pts; Bad (<12%) = 0pts.
+   - Sector Rule - P/B Ratio (Worth 15 pts): ONLY evaluate and apply points if the sector is asset-heavy ("Financial Services", "Financial", "Industrials", "Basic Materials"). Good (<2.0) = 15pts; Normal (2.0-4.0) = 8pts; Bad (>4.0) = 0pts. For asset-light sectors, do not add to the max possible points baseline.
+   - Sector Rule - Debt-to-Equity (Worth 15 pts): Do NOT penalize or score if the sector is "Financial Services" or "Financial" (Banks/NBFCs are exempt). For non-financial sectors: Good (<0.5) = 15pts; Normal (0.5-1.0) = 8pts; Bad (>1.2) = 0pts.
+   - Current Ratio (Info only, no points): Tag as Good (>1.5), Normal (1.1-1.5), or Bad (<1.0).
+
+4. Normalized Recommendation Logic:
+   Calculate final_percentage = (earned_points / max_possible_points) * 100.
+   Assign an investment classification banner based on this score:
+   - >= 75%: 🔥 STRONG BUY
+   - >= 55%: ✅ BUY / ACCUMULATE
+   - >= 40%: ⏳ HOLD
+   - < 40%: ❌ AVOID / SELL
+
+Output the calculated scores and metrics using standard pandas DataFrames and basic Streamlit data elements. Ensure all data handling code is wrapped safely inside try-except blocks to avoid application crashes on incomplete API returns.
